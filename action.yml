@@ -1,0 +1,16 @@
+name: 'YAML Replacement'
+description: 'Replace specific value in YAML file'
+inputs:
+  yaml-file-path:
+    description: 'Path to the YAML file'
+    required: true
+  target-key:
+    description: 'Key to increment in the YAML file'
+    required: true
+  need-push:
+    description: 'Need commit & push YAML replacement'
+    required: true
+    default: false
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
