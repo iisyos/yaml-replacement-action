@@ -4,7 +4,7 @@ This action replace specific value in YAML file.
 
 ## Motivation & Description
 
-If you want to update file cached in browser, you change the file's url like
+When you want to update a file cached in the browser, you change the URL of the file, like this:
 
 ```js
 <script src="production.min.js?ver=1"></script>
@@ -18,21 +18,33 @@ The tails of url is often managed in YAML file.
 So when you deploy application, you need update the phrase `1` to `2`.
 This action update the phrase to current date formatted `YYYYMMDDhhmm`.
 
+The version number at the end of the URL is often managed in a YAML file. So, when you deploy your application, you need to update the version number from `1` to `2`. This action updates the version number to the current date formatted as `YYYYMMDDhhmm`.
+
 
 ## Inputs
 
 ### `yaml-file-path`
 
-**Required** Path of your YAML file which need replacement.
+**Required** The path to your YAML file that needs the replacement.
 
 ### `target-key`
 
-**Required** The key of value need replacement in YAML file.
+**Required** The key of the value that needs to be replaced in the YAML file.
 
 ### `need-push`
 
-If you need push this this changes, set `true`, default `false`
+If you need to push these changes, set `true`, default `false`
 
+**Notice**
+You need to supply your Personal Access Token (PAT) which allows repository access to the checkout action. For example:
+
+```yml
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 
+          token: ${{ secrets.MY_PERSONAL_ACCESS_TOKEN }}
+```
 
 ## Example usage
 
@@ -44,7 +56,7 @@ with:
   need-push: true
 ```
 
-If above specification, setteng.yaml like under format
+In the above example, the setting.yaml file should be in the following format:
 
 ```yaml
 step:
