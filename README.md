@@ -14,10 +14,6 @@ to
 <script src="production.min.js?ver=2"></script>
 ```
 
-The tails of url is often managed in YAML file.
-So when you deploy application, you need update the phrase `1` to `2`.
-This action update the phrase to current date formatted `YYYYMMDDhhmm`.
-
 The version number at the end of the URL is often managed in a YAML file. So, when you deploy your application, you need to update the version number from `1` to `2`. This action updates the version number to the current date formatted as `YYYYMMDDhhmm`.
 
 
